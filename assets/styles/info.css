@@ -1,0 +1,17 @@
+body {
+  margin-left: 40px;
+  margin-right: 40px;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.title {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#header {
+  margin-bottom: 25px;
+}

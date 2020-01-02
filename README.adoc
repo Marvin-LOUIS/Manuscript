@@ -1,0 +1,18 @@
+= Manuscript
+
+// Links
+:asciidoc: https://en.wikipedia.org/wiki/AsciiDoc
+:makefile: https://en.wikipedia.org/wiki/Makefile
+
+This repository serves as a *flexible* template for writings of different kinds
+such as _articles_ and _stories_. It uses {asciidoc}[asciidoc] as a syntax and a
+{makefile}[makefile] to simplify the building process.
+
+image::./assets/images/manuscript.svg[manuscript,300,300,align="center"]
+
+
+== Dependencies
+
+* https://asciidoctor.org/[Asciidoctor]
+* https://www.gnu.org/software/make/[GNU Make]
+* https://wkhtmltopdf.org/[wkhtmltopdf]

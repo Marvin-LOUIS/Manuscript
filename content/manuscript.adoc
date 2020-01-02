@@ -1,0 +1,4 @@
+= Manuscript
+:author: <author>
+:stylesdir: ../assets/styles/
+:stylesheet: manuscript.css
