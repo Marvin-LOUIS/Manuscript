@@ -1,7 +1,7 @@
 #!/bin/env sh
 
-actions=$(find ./assets/scripts -type f | sort | awk -F "/" '{print $NF}' \
-	| rev | cut -f 2- -d '.' | rev)
+actions=$(find ./assets/scripts/actions -type f | sort | awk -F "/" \
+	'{print $NF}' | rev | cut -f 2- -d '.' | rev)
 
 cat << EOF
 The Makefile of this project as been setup to work as follow.
