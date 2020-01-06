@@ -40,10 +40,10 @@ output/summary.pdf: notes/summary.adoc assets/styles/info.css
 action = help
 run:
 	$(call colorecho,"[Run: assets/scripts/actions/$(action).sh]",3)
-	@/bin/sh -c ./assets/scripts/actions/$(action).sh
+	@/bin/sh -c "./assets/scripts/actions/$(action).sh"
 
 clean:
 	@rm -rf output/
 
 help:
-	@/bin/sh -c ./assets/scripts/commands/help.sh
+	@/bin/sh -c "./assets/scripts/commands/help.sh"
