@@ -1,8 +1,14 @@
 #!/bin/env sh
 
-printf "Enter the name of the character: "
-read -r name
 mkdir -p notes/characters
+
+if [ -z $1 ]; then
+	printf "Enter the name of the character: "
+	read -r name
+else
+	name="$1"
+fi
+
 path=notes/characters/${name,,}
 path=${path// /_}.adoc
 

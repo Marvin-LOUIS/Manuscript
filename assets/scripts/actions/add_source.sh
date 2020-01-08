@@ -1,8 +1,14 @@
 #!/bin/env sh
 
-printf "Enter the name of the source: "
-read -r name
 mkdir -p notes/sources
+
+if [ -z $1 ]; then
+	printf "Enter the name of the source: "
+	read -r name
+else
+	name="$1"
+fi
+
 path=notes/sources/${name,,}
 path=${path// /_}.adoc
 

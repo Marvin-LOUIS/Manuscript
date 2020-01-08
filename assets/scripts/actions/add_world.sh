@@ -1,8 +1,14 @@
 #!/bin/env sh
 
-printf "Enter the name of the world: "
-read -r name
 mkdir -p notes/worlds
+
+if [ -z $1 ]; then
+	printf "Enter the name of the world: "
+	read -r name
+else
+	name="$1"
+fi
+
 path=notes/worlds/${name,,}
 path=${path// /_}.adoc
 
