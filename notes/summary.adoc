@@ -1,3 +1,0 @@
-= Summary
-:stylesdir: ../assets/styles/
-:stylesheet: info.css
