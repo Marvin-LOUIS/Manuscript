@@ -8,7 +8,7 @@ read -r author
 cat <<- EOF > ./content/manuscript.adoc
 = Article
 :author: $author
-:sourcedir: sources/
+:sourcedir: ../notes/sources/
 :stylesdir: ../assets/styles/
 :stylesheet: manuscript.css
 
@@ -64,4 +64,8 @@ cat <<- EOF > ./notes/summary.adoc
 EOF
 
 echo "A file has been created at: <notes/summary.adoc>."
-find "./assets/scripts/actions/" -type f -name 'init_*' -exec rm {} +
+
+cd ./assets/scripts/actions
+mv add_source.sh /tmp
+rm -rf *
+mv /tmp/add_source.sh ./

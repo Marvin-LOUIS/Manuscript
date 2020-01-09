@@ -54,7 +54,7 @@ include::characters/character.adoc[tag=desc]
 
 // Description of the main world of location of the story
 
-include::world/world.adoc[tag=desc]
+include::worlds/world.adoc[tag=desc]
 
 
 == Pitch
@@ -77,4 +77,8 @@ EOF
 echo "A file has been created at: <notes/summary.adoc>."
 ./assets/scripts/actions/add_character.sh "Character"
 ./assets/scripts/actions/add_world.sh "World"
-find "./assets/scripts/actions/" -type f -name 'init_*' -exec rm {} +
+
+cd ./assets/scripts/actions
+mv add_world.sh add_character.sh /tmp
+rm -rf *
+mv /tmp/add_world.sh /tmp/add_character.sh ./
