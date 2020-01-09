@@ -1,4 +1,4 @@
-.PHONY: generate manuscript summary run clean help
+.PHONY: generate manuscript summary init add run clean help
 .DEFAULT_GOAL = help
 
 define colorecho
@@ -36,6 +36,12 @@ summary: output/summary.pdf
 output/summary.pdf: notes/summary.adoc assets/styles/info.css
 	$(call colorecho,"[Generate: $@]",3)
 	$(call pdf,notes/summary.adoc,summary)
+
+init:
+	@/bin/sh -c "./assets/scripts/commands/choose_action.sh init"
+
+add:
+	@/bin/sh -c "./assets/scripts/commands/choose_action.sh add"
 
 action = help
 run:
