@@ -19,11 +19,14 @@ define rawhtml
 	asciidoctor -a nofooter -a stylesheet! ${1} -D output -o ${2}.html
 endef
 
+content = $(shell find content -type f)
+notes = $(shell find notes -type f)
+
 generate: manuscript summary
 
 manuscript: output/manuscript.pdf output/manuscript.html
 
-output/manuscript.pdf: content/manuscript.adoc assets/styles/manuscript.css
+output/manuscript.pdf: $(content) assets/styles/manuscript.css
 	$(call colorecho,"[Generate: $@]",3)
 	$(call pdf,content/manuscript.adoc,manuscript)
 
@@ -33,7 +36,7 @@ output/manuscript.html: content/manuscript.adoc
 
 summary: output/summary.pdf
 
-output/summary.pdf: notes/summary.adoc assets/styles/info.css
+output/summary.pdf: $(notes) assets/styles/info.css
 	$(call colorecho,"[Generate: $@]",3)
 	$(call pdf,notes/summary.adoc,summary)
 
